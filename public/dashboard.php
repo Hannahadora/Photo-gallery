@@ -11,7 +11,8 @@
 
 <body>
     <div class="dashboard-page">
-        <?php include '../includes/dashboard-sidebar.php'; ?>
+        <?php require_once __DIR__ . '/../config/init.php'; ?>
+        <?php include __DIR__ . '/../includes/side-nav.php'; ?>
 
         <main class="dashboard-main">
             <div class="dashboard-topbar">
