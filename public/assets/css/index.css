@@ -398,3 +398,247 @@
         font-size: 14px;
     }
 }
+
+/* Dashboard Page */
+.dashboard-hero {
+    padding: 100px 0 80px;
+    background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+}
+
+.dashboard-hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.dashboard-hero p.page-label {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 8px 18px;
+    background: rgba(99, 102, 241, 0.12);
+    color: #4338ca;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.dashboard-hero h1 {
+    margin: 0;
+    font-size: clamp(2.75rem, 5vw, 4rem);
+    line-height: 1.02;
+    color: #111827;
+}
+
+.dashboard-hero-inner > div {
+    min-width: 320px;
+}
+
+.dashboard-hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.dashboard-stats {
+    padding: 60px 0;
+}
+
+.dashboard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.dashboard-stat-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 24px;
+    box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+    text-align: left;
+}
+
+.dashboard-stat-card .stat-number {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #111827;
+}
+
+.dashboard-stat-card p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.96rem;
+}
+
+.dashboard-panels {
+    padding: 80px 0 120px;
+}
+
+.panel-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.panel-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 28px 30px;
+    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+}
+
+.panel-card-large {
+    min-height: 380px;
+}
+
+.panel-card-medium {
+    min-height: 340px;
+}
+
+.panel-card-small {
+    min-height: 280px;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #111827;
+}
+
+.panel-heading span {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.recent-list,
+.highlight-list,
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.recent-item,
+.highlight-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: #f8fafc;
+}
+
+.recent-item strong {
+    color: #111827;
+}
+
+.highlight-item {
+    padding: 18px 20px;
+}
+
+.highlight-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #7c3aed;
+    flex-shrink: 0;
+}
+
+.chart-mockup {
+    position: relative;
+    height: 240px;
+    border-radius: 28px;
+    background: linear-gradient(180deg, #eef2ff 0%, #eef3ff 100%);
+    overflow: hidden;
+    padding: 28px;
+}
+
+.chart-line {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 60px;
+    bottom: 50px;
+    border-bottom: 1px solid rgba(74, 85, 104, 0.12);
+}
+
+.chart-point {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #5b67f5 0%, #8251ec 100%);
+    box-shadow: 0 0 18px rgba(91, 103, 245, 0.18);
+}
+
+.point-1 { left: 22%; bottom: 40px; }
+.point-2 { left: 42%; bottom: 82px; }
+.point-3 { left: 62%; bottom: 58px; }
+.point-4 { left: 82%; bottom: 116px; }
+
+.quick-links a {
+    display: inline-flex;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: #f8fafc;
+    color: #334155;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.quick-links a:hover {
+    background: #eef2ff;
+    color: #312e81;
+}
+
+@media (max-width: 992px) {
+    .panel-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-hero {
+        padding: 72px 0 60px;
+    }
+
+    .dashboard-hero-inner {
+        justify-content: center;
+    }
+
+    .dashboard-hero-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-hero {
+        padding: 56px 0 40px;
+    }
+
+    .dashboard-hero-inner > div {
+        min-width: 100%;
+    }
+
+    .dashboard-stats {
+        padding: 40px 0;
+    }
+
+    .stats-grid,
+    .panel-row {
+        gap: 18px;
+    }
+}
