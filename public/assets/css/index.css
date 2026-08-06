@@ -1,0 +1,65 @@
+.home-hero {
+    background-color: rgb(168, 83, 18);
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.home-hero div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.home-hero h2 {
+    font-size: 50px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.home-hero p {
+    width: 100%;
+    max-width: 400px;
+    font-size: 20px;
+    margin: 10px 0 0;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-hero {
+        height: 300px;
+    }
+
+    .home-hero h2 {
+        font-size: 36px;
+    }
+
+    .home-hero p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero {
+        height: 250px;
+    }
+
+    .home-hero h2 {
+        font-size: 24px;
+    }
+
+    .home-hero p {
+        font-size: 14px;
+    }
+}

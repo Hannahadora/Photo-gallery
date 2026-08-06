@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-pry {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-sec {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn-pry:hover {
+    background-color: #0056b3;
+}
+
+.btn-sec:hover {
+    background-color: #e6f0ff;
+}
