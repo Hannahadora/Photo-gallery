@@ -1,11 +1,16 @@
 .top-nav {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+.top-nav li {
+    display: flex;
 }
 
 .top-nav li a {
@@ -14,4 +19,39 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    white-space: nowrap;
+}
+
+.top-nav li a:hover {
+    color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-nav {
+        gap: 10px;
+    }
+
+    .top-nav li a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        gap: 5px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .top-nav li {
+        width: 100%;
+    }
+
+    .top-nav li a {
+        padding: 12px;
+        font-size: 12px;
+        width: 100%;
+    }
 }

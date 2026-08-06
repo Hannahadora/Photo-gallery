@@ -1,60 +1,107 @@
-header {
-    padding: 20px 100px;
-    background: #fff;
+.header-wrapper {
+    padding: 24px 0;
+    background: rgba(255, 255, 255, 0.92);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    backdrop-filter: blur(18px);
+}
 
-    div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
+.header-btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-wrapper h1 {
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: -0.04em;
+    color: #111827;
+}
+
+.header-wrapper img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.header-wrapper input {
+    width: 260px;
+    max-width: 100%;
+    padding: 12px 18px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    background: #ffffff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.header-wrapper input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.12);
+}
+
+.header-wrapper button {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 999px;
+}
+
+.header-wrapper .btn-pry {
+    background: linear-gradient(135deg, #5b67f5 0%, #8251ec 100%);
+    color: #ffffff;
+}
+
+.header-wrapper .btn-sec {
+    background: #ffffff;
+    color: #4f46e5;
+    border: 1px solid rgba(79, 70, 229, 0.24);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-wrapper {
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    h1 {
+    .header-wrapper h1 {
         font-size: 24px;
-        margin: 0;
+        text-align: center;
     }
 
-    img {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
+    .header-wrapper input {
+        max-width: 100%;
     }
 
-    input {
-        width: 300px;
-        padding: 8px;
-        font-size: 14px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+    .header-btns {
+        justify-content: center;
     }
-    input:focus {
-        outline: none;
-        border-color: #007bff;
+}
+
+@media (max-width: 480px) {
+    .header-wrapper {
+        padding: 18px 0;
     }
 
-    button {
-        padding: 8px 16px;
-        font-size: 14px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+    .header-wrapper h1 {
+        font-size: 22px;
     }
 
-    .btn-pry {
-        background-color: #007bff;
-        color: #fff;
-    }
-
-    .btn-sec {
-        background-color: #fff;
-        color: #007bff;
-        border: 1px solid #007bff;
+    .header-wrapper input,
+    .header-wrapper button,
+    .top-nav li a {
+        font-size: 13px;
+        padding: 10px 14px;
     }
 }

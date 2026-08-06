@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/public/assets/css/navigation.css">
 <nav>
     <ul class="top-nav">
         <li><a href="index.php">Home</a></li>
