@@ -51,3 +51,34 @@ body {
 .btn-sec:hover {
     background: #f8f9ff;
 }
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 0 16px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 0 12px;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    body {
+        font-size: 13px;
+    }
+}

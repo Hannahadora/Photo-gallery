@@ -32,6 +32,9 @@ body {
     border-radius: 32px;
     padding: 32px;
     box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 32px;
 }
 
 .sidebar-brand {
@@ -359,3 +362,132 @@ body {
         font-size: 2rem;
     }
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-page {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .dashboard-sidebar {
+        position: relative;
+        top: 0;
+        order: -1;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .dashboard-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-page {
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .dashboard-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .dashboard-action-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .dashboard-action-group button {
+        width: 100%;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        padding: 18px;
+    }
+
+    .dashboard-card .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .dashboard-title h1 {
+        font-size: 1.75rem;
+    }
+
+    .sidebar-nav a {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .panel-grid {
+        gap: 16px;
+    }
+
+    .panel-card {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-page {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .dashboard-sidebar {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .dashboard-title h1 {
+        font-size: 1.35rem;
+    }
+
+    .dashboard-title p {
+        font-size: 0.9rem;
+    }
+
+    .dashboard-card {
+        padding: 14px;
+    }
+
+    .dashboard-card .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-card h3 {
+        font-size: 0.85rem;
+    }
+
+    .sidebar-nav a {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .brand-title {
+        font-size: 0.95rem;
+    }
+
+    .panel-grid {
+        gap: 12px;
+    }
+
+    .recent-item {
+        padding: 10px 0;
+    }
+}
+

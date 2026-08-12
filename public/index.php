@@ -1,4 +1,4 @@
-<?php include '../includes/header.php'; ?>
+<?php include __DIR__ . '/../resources/views/components/header.php'; ?>
 
 <!-- Hero Section -->
 <section class="home-hero">
@@ -146,4 +146,4 @@
     </div>
 </section>
 
-<?php include '../includes/footer.php'; ?>
+<?php include __DIR__ . '/../resources/views/components/footer.php'; ?>
