@@ -19,21 +19,6 @@
                 <div class="dashboard-title">
                     <p class="page-label">Dashboard</p>
                     <h1>Welcome back, curator.</h1>
-
-                    <?php
-                        $users = User::find_all_users();
-                        foreach ($users as $user) {
-                            echo "<p>User: " . $user->id . "</p>";
-                        } 
-
-                        $found_user = User::get_user_by_id(3);
-                        echo "<p>Current User: " . $found_user->username . "</p>";
-
-                        $user = User::instantiation($found_user);
-                        echo "ins". $user->id . "";
-
-                    ?>
-                    
                     <p>Track gallery performance, view the latest uploads, and manage your creative space.</p>
                 </div>
                 <div class="dashboard-action-group">
