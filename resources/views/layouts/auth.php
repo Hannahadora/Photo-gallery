@@ -16,10 +16,6 @@ require_once __DIR__ . '../../../config/init.php';
 //     exit();
 // }
 
-$content_file = __DIR__ . '/../resources/views/dashboard/index.php';
-
-require_once __DIR__ . '/../resources/views/layouts/auth.php';
-
 ?>
 
 <!DOCTYPE html>

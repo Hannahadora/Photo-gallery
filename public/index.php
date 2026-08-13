@@ -8,7 +8,7 @@ $uri = trim($uri, '/');
 switch ($uri) {
 
     case '':
-        require __DIR__ . '/../public/home/index.php';
+        require __DIR__ . '/../resources/views/home/index.php';
         break;
 
     case 'login':

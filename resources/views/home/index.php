@@ -1,6 +1,6 @@
 <?php
-include __DIR__ . '/../resources/views/components/header.php';
 require_once __DIR__ . '/../config/init.php';
+include __DIR__ . '/../resources/views/components/header.php';
 ?>
 
 <!-- Hero Section -->
