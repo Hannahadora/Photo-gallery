@@ -1,9 +1,24 @@
 <?php
 // Initialize config and dependencies first
-require_once __DIR__ . '/../../config/init.php';
+require_once __DIR__ . '../../../config/init.php';
 
 // Verify user is authenticated
-if(!$session->is_signed_in()){header("Location: login.php"); exit();}
+// if(!$session->is_signed_in()){header("Location: login.php"); exit();}
+
+?>
+
+<?php
+
+// require_once __DIR__ . '/../config/init.php';
+
+// if (!$session->is_signed_in()) {
+//     header('Location: /login');
+//     exit();
+// }
+
+// $content_file = __DIR__ . '/../resources/views/dashboard/index.php';
+
+// require_once __DIR__ . '/../resources/views/layouts/auth.php';
 
 ?>
 
@@ -22,7 +37,7 @@ if(!$session->is_signed_in()){header("Location: login.php"); exit();}
     <div class="dashboard-page">
 
         <main class="dashboard-main">
-            <?php include $content_file; ?>
+            <?php include("../dashboard/index.php"); ?>
         </main>
     </div>
 </body>

@@ -1,5 +1,44 @@
 <?php include __DIR__ . '/../resources/views/components/header.php'; ?>
 
+<?php
+
+require_once __DIR__ . '/../config/init.php';
+
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$uri = trim($uri, '/');
+
+switch ($uri) {
+
+    case '':
+        require __DIR__ . '/../public/index.php';
+        break;
+
+    case 'login':
+        $content_file = __DIR__ . '/../resources/views/login/index.php';
+
+        require __DIR__ . '/../resources/views/layouts/app.php';
+        break;
+
+    case 'dashboard':
+
+        if (!$session->is_signed_in()) {
+            header('Location: /login');
+            exit();
+        }
+
+        $content_file = __DIR__ . '/../resources/views/dashboard/index.php';
+
+        require __DIR__ . '/../resources/views/layouts/auth.php';
+        break;
+
+    default:
+        http_response_code(404);
+        echo 'Page not found';
+        break;
+}
+
+?>
+
 <!-- Hero Section -->
 <section class="home-hero">
     <div class="hero-content">

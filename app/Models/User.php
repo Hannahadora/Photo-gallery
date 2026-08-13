@@ -13,7 +13,6 @@ class User
     {
 
         return self::find_this_query("SELECT * FROM users");
-
     }
 
     public static function get_user_by_id($id)
@@ -37,6 +36,19 @@ class User
         return $the_object_array;
     }
 
+    public static function verify_user($username, $password)
+    {
+        global $database;
+
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
+
+        $sql = "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' LIMIT 1";
+        $result_array = self::find_this_query($sql);
+
+        return !empty($result_array) ? array_shift($result_array) : false;
+    }
+
     public static function instantiation($the_record)
     {
         $the_object = new self;
@@ -52,7 +64,7 @@ class User
                 $the_object->$key = $value;
             }
         }
-        
+
         return $the_object;
     }
 
@@ -61,5 +73,4 @@ class User
         $object_properties = get_object_vars($this);
         return array_key_exists($attribute, $object_properties);
     }
-
 }
