@@ -16,9 +16,9 @@ require_once __DIR__ . '../../../config/init.php';
 //     exit();
 // }
 
-// $content_file = __DIR__ . '/../resources/views/dashboard/index.php';
+$content_file = __DIR__ . '/../resources/views/dashboard/index.php';
 
-// require_once __DIR__ . '/../resources/views/layouts/auth.php';
+require_once __DIR__ . '/../resources/views/layouts/auth.php';
 
 ?>
 
@@ -37,7 +37,7 @@ require_once __DIR__ . '../../../config/init.php';
     <div class="dashboard-page">
 
         <main class="dashboard-main">
-            <?php include("../dashboard/index.php"); ?>
+            <?php include $content_file; ?>
         </main>
     </div>
 </body>
