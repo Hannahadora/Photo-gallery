@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../config/init.php';
+require_once __DIR__ . '/../../../config/init.php';
 
 if ($session->is_signed_in()) {
     header("Location: /dashboard");
@@ -136,8 +136,8 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-pry">Sign in</button>
                     <a href="register.php" class="btn btn-sec" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px">Create account</a>
+                    <button type="submit" class="btn btn-pry">Sign in</button>
                 </div>
 
                 <div class="auth-meta">

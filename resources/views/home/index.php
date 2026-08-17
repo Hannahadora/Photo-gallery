@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../config/init.php';
-include __DIR__ . '/../resources/views/components/header.php';
+require_once __DIR__ . '/../../../config/init.php';
+require __DIR__ .'/../components/header.php';
 ?>
 
 <!-- Hero Section -->
@@ -149,4 +149,4 @@ include __DIR__ . '/../resources/views/components/header.php';
     </div>
 </section>
 
-<?php include __DIR__ . '/../resources/views/components/footer.php'; ?>
+<?php include __DIR__ . '/../components/footer.php'; ?>

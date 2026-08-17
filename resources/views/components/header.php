@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="headerBg">
         <header class="header-wrapper app-container">
             <h1>Photo Gallery</h1>
             <?php include __DIR__ . '/top-nav.php'; ?>
@@ -24,3 +24,4 @@
                 <button class="btn-pry">Register</button>
             </div>
         </header>
+    </div>
