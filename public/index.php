@@ -46,10 +46,10 @@ switch ($uri) {
         break;
 
     case 'dashboard':
-        if (!$session->is_signed_in()) {
-            header('Location: /login');
-            exit();
-        }
+        // if (!$session->is_signed_in()) {
+        //     header('Location: /login');
+        //     exit();
+        // }
 
         $render(
             __DIR__ . '/../resources/views/dashboard/index.php',

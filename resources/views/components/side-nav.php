@@ -14,9 +14,10 @@
         <a href="#"><span>📂</span> Gallery</a>
         <a href="#"><span>📷</span> Collections</a>
         <a href="#"><span>⚙️</span> Settings</a>
+        <a href="/logout" class="<?= ($active_nav ?? '') === 'logout' ? 'active' : '' ?>"><span>🚪</span>Logout</a>
     </nav>
 
-    <div class="sidebar-cta">
+    <div class="sidebar-cta">bg
         <h3>Need more storage?</h3>
         <p>Upgrade your plan to store and share more beautiful photos.</p>
         <button class="btn btn-pry">Upgrade Plan</button>
