@@ -14,7 +14,7 @@
 
 <body>
 
-    <?php require $content_file; ?>
+    <?= $page_content ?? '' ?>
 
 </body>
 

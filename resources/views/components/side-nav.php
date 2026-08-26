@@ -8,7 +8,7 @@
     </div>
 
     <nav class="sidebar-nav">
-        <a href="dashboard.php" class="active"><span>🏠</span> Dashboard</a>
+        <a href="/dashboard" class="<?= ($active_nav ?? '') === 'dashboard' ? 'active' : '' ?>"><span>🏠</span> Dashboard</a>
         <a href="#"><span>🖼️</span> My Photos</a>
         <a href="#"><span>⬆️</span> Upload Photo</a>
         <a href="#"><span>📂</span> Gallery</a>

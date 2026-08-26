@@ -9,28 +9,53 @@ require_once __DIR__ . '/../config/init.php';
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = trim($uri, '/');
 
+/**
+ * Render a view inside one of the shared layouts.
+ *
+ * The view is captured before the layout is included so it can set values such
+ * as $page_title without outputting markup before the document shell.
+ */
+$render = static function (string $view, string $layout, array $data = []) use ($session): void {
+    // Views historically rely on the session instance created by config/init.php.
+    $data['session'] ??= $session;
+    extract($data, EXTR_SKIP);
+
+    ob_start();
+    require $view;
+    $page_content = ob_get_clean();
+
+    require $layout;
+};
+
 switch ($uri) {
 
     case '':
-        include('../resources/views/home/index.php');
+        require __DIR__ . '/../resources/views/home/index.php';
         break;
 
     case 'login':
-        $content_file = '../resources/views/auth/login.php';
+        $render(
+            __DIR__ . '/../resources/views/auth/login.php',
+            __DIR__ . '/../resources/views/layouts/app.php'
+        );
+        break;
 
-        include '../resources/views/layouts/app.php';
+    case 'logout':
+        // Logout performs a redirect, so it must run before any layout markup.
+        require __DIR__ . '/../resources/views/auth/logout.php';
         break;
 
     case 'dashboard':
-
         if (!$session->is_signed_in()) {
             header('Location: /login');
             exit();
         }
 
-        $content_file = '../resources/views/dashboard/index.php';
-
-        include '../resources/views/layouts/auth.php';
+        $render(
+            __DIR__ . '/../resources/views/dashboard/index.php',
+            __DIR__ . '/../resources/views/layouts/auth.php',
+            ['active_nav' => 'dashboard']
+        );
         break;
 
     default:
