@@ -1,3 +1,10 @@
+<?php
+if (!$session->is_signed_in()) {
+    header('Location: /login');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

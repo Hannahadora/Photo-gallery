@@ -8,10 +8,9 @@ if ($session->is_signed_in()) {
 }
 
 // Optionally show any auth error passed via session
-$auth_error = $_SESSION['auth_error'] ?? null;
-unset($_SESSION['auth_error']);
+$the_message = $_SESSION['message'] ?? null;
 
-if (isset($_POST['submit'])) {
+if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = trim($_POST['password'] ?? '');
 
@@ -24,11 +23,12 @@ if (isset($_POST['submit'])) {
         header("Location: /dashboard");
         exit();
     } else {
-        $auth_error = "Invalid username or password.";
+        $the_message = "Invalid username or password.";
     }
 } else {
     $username = '';
     $password = '';
+    $the_message = '';
 }
 ?>
 
@@ -84,15 +84,6 @@ if (isset($_POST['submit'])) {
             margin-top: 18px
         }
 
-        .auth-error {
-            background: #fff4f4;
-            color: #8b1c1c;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ffd6d6;
-            margin-bottom: 14px
-        }
-
         .auth-meta {
             margin-top: 12px;
             text-align: center;
@@ -116,19 +107,24 @@ if (isset($_POST['submit'])) {
             <h2>Sign in to your account</h2>
             <p class="lead">Welcome back — enter your details to continue.</p>
 
-            <?php if (!empty($auth_error)): ?>
-                <div class="auth-error"><?php echo htmlspecialchars($auth_error); ?></div>
+            <?php if(!empty($the_message)): ?>
+
+                <div class="bg-danger">
+                    <p><?php echo $the_message; ?></h4>
+                </div>
+
             <?php endif; ?>
 
-            <form method="post" action="/auth/authenticate.php">
+
+            <form method="post" action="/login">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input id="username" name="username" type="text" class="form-input" required value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>">
+                    <input id="username" name="username" type="text" class="form-input" required required value="<?php echo htmlentities($username) ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" name="password" type="password" class="form-input" required>
+                    <input id="password" name="password" type="password" class="form-input" required value="<?php echo htmlentities($password) ?>">
                 </div>
 
                 <div class="form-group">

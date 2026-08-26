@@ -1,13 +1,18 @@
 <?php
 // Set page title
 $page_title = 'Dashboard';
+$user = isset($_SESSION['user_id'])
+    ? User::get_user_by_id($_SESSION['user_id'])
+    : null;
+
+$username = $user ? $user->username : '';
 
 // This file contains the main dashboard content
 ?>
 <div class="dashboard-topbar">
     <div class="dashboard-title">
         <p class="page-label">Dashboard</p>
-        <h1>Welcome back, curator.</h1>
+        <h1>Welcome back, <?php echo $username ?>.</h1>
         <p>Track gallery performance, view the latest uploads, and manage your creative space.</p>
     </div>
     <div class="dashboard-action-group">

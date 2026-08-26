@@ -69,7 +69,7 @@ class Session {
             $this->message = $_SESSION['message'];
             unset($_SESSION['message']);
         } else {
-            $this->message = ""
+            $this->message = "";
         }
     }
 }
