@@ -9,11 +9,11 @@
 
     <nav class="sidebar-nav">
         <a href="/dashboard" class="<?= ($active_nav ?? '') === 'dashboard' ? 'active' : '' ?>"><span>🏠</span> Dashboard</a>
-        <a href="#"><span>🖼️</span> My Photos</a>
-        <a href="#"><span>⬆️</span> Upload Photo</a>
-        <a href="#"><span>📂</span> Gallery</a>
-        <a href="#"><span>📷</span> Collections</a>
-        <a href="#"><span>⚙️</span> Settings</a>
+        <a href="/photos" class="<?= ($active_nav ?? '') === 'photos' ? 'active' : '' ?>"><span>🖼️</span> My Photos</a>
+        <a href="/upload" class="<?= ($active_nav ?? '') === 'upload' ? 'active' : '' ?>"><span>⬆️</span> Upload Photo</a>
+        <a href="/gallery" class="<?= ($active_nav ?? '') === 'gallery' ? 'active' : '' ?>"><span>📂</span> Gallery</a>
+        <a href="/collections" class="<?= ($active_nav ?? '') === 'collections' ? 'active' : '' ?>"><span>📷</span> Collections</a>
+        <a href="/settings" class="<?= ($active_nav ?? '') === 'settings' ? 'active' : '' ?>"><span>⚙️</span> Settings</a>
         <a href="/logout" class="<?= ($active_nav ?? '') === 'logout' ? 'active' : '' ?>"><span>🚪</span>Logout</a>
     </nav>
 

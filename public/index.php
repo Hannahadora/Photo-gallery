@@ -52,6 +52,13 @@ switch ($uri) {
             ['active_nav' => 'dashboard']
         );
         break;
+    case 'upload':
+        $render(
+            __DIR__ . '/../resources/views/upload.php',
+            __DIR__ . '/../resources/views/layouts/auth.php',
+            ['active_nav' => 'upload']
+        );
+        break;
 
     default:
         http_response_code(404);
