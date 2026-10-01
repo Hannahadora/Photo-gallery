@@ -52,11 +52,37 @@ switch ($uri) {
             ['active_nav' => 'dashboard']
         );
         break;
+
     case 'upload':
         $render(
             __DIR__ . '/../resources/views/upload.php',
             __DIR__ . '/../resources/views/layouts/auth.php',
             ['active_nav' => 'upload']
+        );
+        break;
+
+    case 'photos':
+        $render(
+            __DIR__ . '/../resources/views/photos.php',
+            __DIR__ . '/../resources/views/layouts/auth.php',
+            ['active_nav' => 'photos']
+        );
+        break;
+
+    case 'gallery':
+        $render(
+            __DIR__ . '/../resources/views/gallery.php',
+            __DIR__ . '/../resources/views/layouts/auth.php',
+            ['active_nav' => 'gallery']
+        );
+        break;
+
+    case 'collections':
+    case 'collection':
+        $render(
+            __DIR__ . '/../resources/views/collections.php',
+            __DIR__ . '/../resources/views/layouts/auth.php',
+            ['active_nav' => 'collections']
         );
         break;
 
