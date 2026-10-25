@@ -132,7 +132,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                 </div>
 
                 <div class="form-actions">
-                    <a href="register.php" class="btn btn-sec" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px">Create account</a>
+                    <a href="/register" class="btn btn-sec" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px">Create account</a>
                     <button type="submit" class="btn btn-pry">Sign in</button>
                 </div>
 

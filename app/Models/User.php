@@ -41,12 +41,47 @@ class User
         global $database;
 
         $username = $database->escape_string($username);
-        $password = $database->escape_string($password);
 
-        $sql = "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' LIMIT 1";
+        $sql = "SELECT * FROM users WHERE username = '{$username}' LIMIT 1";
         $result_array = self::find_this_query($sql);
+        $user = !empty($result_array) ? array_shift($result_array) : null;
 
-        return !empty($result_array) ? array_shift($result_array) : false;
+        if (!$user) {
+            return false;
+        }
+
+        // Registered users have hashed passwords; older rows may still be plain text.
+        if (password_verify($password, $user->password) || hash_equals((string) $user->password, $password)) {
+            return $user;
+        }
+
+        return false;
+    }
+
+    public static function username_exists($username)
+    {
+        global $database;
+
+        $username = $database->escape_string($username);
+        $result_array = self::find_this_query("SELECT * FROM users WHERE username = '{$username}' LIMIT 1");
+
+        return !empty($result_array);
+    }
+
+    public static function create($username, $password, $first_name, $last_name)
+    {
+        global $database;
+
+        $username   = $database->escape_string($username);
+        $password   = $database->escape_string(password_hash($password, PASSWORD_DEFAULT));
+        $first_name = $database->escape_string($first_name);
+        $last_name  = $database->escape_string($last_name);
+
+        $sql = "INSERT INTO users (username, password, first_name, last_name) "
+             . "VALUES ('{$username}', '{$password}', '{$first_name}', '{$last_name}')";
+        $database->query($sql);
+
+        return self::get_user_by_id((int) $database->the_insert_id());
     }
 
     public static function instantiation($the_record)

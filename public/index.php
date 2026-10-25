@@ -40,6 +40,13 @@ switch ($uri) {
         );
         break;
 
+    case 'register':
+        $render(
+            __DIR__ . '/../resources/views/auth/register.php',
+            __DIR__ . '/../resources/views/layouts/app.php'
+        );
+        break;
+
     case 'logout':
         // Logout performs a redirect, so it must run before any layout markup.
         require __DIR__ . '/../resources/views/auth/logout.php';
