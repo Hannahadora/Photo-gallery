@@ -72,16 +72,24 @@ class User
     {
         global $database;
 
-        $username   = $database->escape_string($username);
-        $password   = $database->escape_string(password_hash($password, PASSWORD_DEFAULT));
-        $first_name = $database->escape_string($first_name);
-        $last_name  = $database->escape_string($last_name);
+        $user = new self;
+        $user->username   = $username;
+        $user->password   = password_hash($password, PASSWORD_DEFAULT);
+        $user->first_name = $first_name;
+        $user->last_name  = $last_name;
+
+        $username   = $database->escape_string($user->username);
+        $password   = $database->escape_string($user->password);
+        $first_name = $database->escape_string($user->first_name);
+        $last_name  = $database->escape_string($user->last_name);
 
         $sql = "INSERT INTO users (username, password, first_name, last_name) "
              . "VALUES ('{$username}', '{$password}', '{$first_name}', '{$last_name}')";
         $database->query($sql);
 
-        return self::get_user_by_id((int) $database->the_insert_id());
+        $user->id = $database->the_insert_id();
+
+        return $user->id ? $user : false;
     }
 
     public static function instantiation($the_record)
